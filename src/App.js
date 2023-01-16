@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
+import React, { useEffect, useState, useCallback } from 'react';
 
 import './App.css';
 import pokeApi from './api'
@@ -7,20 +6,24 @@ import pokeApi from './api'
 function App() {
 
   const limit = 10
-  const offset = 0
 
+  const [offset, setOffset] = useState(0)
   const [pokemons, setPokemons] = useState([]);
+
+  const incrementPokemons = useCallback((pokemonsData) => {
+    debugger
+    setPokemons((previousState) => (pokemonsData))
+  }, [])
 
   useEffect(() => {
     pokeApi.getPokemons(offset, limit).then((pokemonsData = []) => {
-      setPokemons(pokemonsData)
+      incrementPokemons(pokemonsData)
     })
-  }, [])
+  }, [offset, incrementPokemons])
   
-  console.log(pokemons)
+  console.log(offset)
 
   return (
-
     <section className="content">
       <h1>Pokedex</h1>
       <ol id="pokemonList" className="pokemons">
@@ -41,8 +44,17 @@ function App() {
           </li>
         ))}
       </ol>
+
       <div className="pagination">
-        <button id="loadMoreButton" type="button">
+        <button
+          id="loadMoreButton" 
+          type="button" 
+          onClick={
+            (e) => {
+              setOffset(offset + limit)
+            }
+          }
+        >
           load more
         </button>
       </div>
