@@ -18,31 +18,18 @@ function App() {
   }, [])
   
   console.log(pokemons)
-  
+
   return (
+
     <section className="content">
       <h1>Pokedex</h1>
       <ol id="pokemonList" className="pokemons">
-        <li className="pokemon grass">
-          <span className="number">#1</span>
-          <span className="name">bulbasaur</span>
-          <div className="detail">
-              <ol className="types">
-                <li className="type grass">grass</li><li className="type poison">poison</li>
-              </ol>        
-              <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="bulbasaur"/>
-          </div>
-        </li>
-            <li className="pokemon grass">
-              <span className="number">#2</span>
-              <span className="name">ivysaur</span>
-                <div className="detail">
-                  <ol className="types">
-                      <li className="type grass">grass</li><li className="type poison">poison</li>
-                  </ol>        
-                  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/2.svg" alt="ivysaur"/>
-                </div>
-            </li>
+        {pokemons.map(pokemon => (
+          <li className={`pokemon ${pokemon.type}`} key={pokemon.number}>
+            <span className="number">#{pokemon.number}</span>
+            <span className="name">{pokemon.name}</span>
+          </li>
+        ))}
         </ol>
         <div className="pagination">
             <button id="loadMoreButton" type="button">
