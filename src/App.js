@@ -6,7 +6,7 @@ import pokeApi from './api'
 
 function App() {
 
-  const limit = 5
+  const limit = 10
   const offset = 0
 
   const [pokemons, setPokemons] = useState([]);
@@ -28,14 +28,24 @@ function App() {
           <li className={`pokemon ${pokemon.type}`} key={pokemon.number}>
             <span className="number">#{pokemon.number}</span>
             <span className="name">{pokemon.name}</span>
+            <div className="detail">
+              <ol className="types">
+                {pokemon.types.map(type => (
+                  <li className={`type ${type}`} key={type}>
+                    {type}
+                  </li>
+                ))}             
+              </ol>
+              <img src={pokemon.photo} alt={pokemon.name}/>
+            </div>
           </li>
         ))}
-        </ol>
-        <div className="pagination">
-            <button id="loadMoreButton" type="button">
-                load more
-            </button>
-        </div>
+      </ol>
+      <div className="pagination">
+        <button id="loadMoreButton" type="button">
+          load more
+        </button>
+      </div>
     </section>
   );
 }
