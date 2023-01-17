@@ -4,25 +4,23 @@ import './App.css';
 import pokeApi from './api'
 
 function App() {
-
   const limit = 10
+  const maxRecord = 141
 
   const [offset, setOffset] = useState(0)
   const [pokemons, setPokemons] = useState([]);
 
   const incrementPokemons = useCallback((pokemonsData) => {
-    debugger
     setPokemons((previousState) => (pokemonsData))
   }, [])
 
   useEffect(() => {
     pokeApi.getPokemons(offset, limit).then((pokemonsData = []) => {
-      incrementPokemons(pokemonsData)
+      setPokemons([...pokemons, ...pokemonsData])
     })
-  }, [offset, incrementPokemons])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [offset])
   
-  console.log(offset)
-
   return (
     <section className="content">
       <h1>Pokedex</h1>
@@ -45,20 +43,26 @@ function App() {
         ))}
       </ol>
 
-      <div className="pagination">
-        <button
-          id="loadMoreButton" 
-          type="button" 
-          onClick={
-            (e) => {
-              setOffset(offset + limit)
-            }
-          }
-        >
-          load more
-        </button>
-      </div>
+      {
+        // 10 + 20 <= 30
+        (limit + offset < maxRecord) ? (
+          <div className="pagination">
+            <button
+              id="loadMoreButton" 
+              type="button" 
+              onClick={
+                (e) => {
+                  setOffset(offset + limit)
+                }
+              }
+            >
+              load more
+            </button>
+          </div>
+        ) : null
+      }
     </section>
   );
 }
 export default App;
+
