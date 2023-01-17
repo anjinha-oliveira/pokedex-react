@@ -5,7 +5,7 @@ import pokeApi from './api'
 
 function App() {
   const limit = 10
-  const maxRecord = 141
+  const maxRecord = 151
 
   const [offset, setOffset] = useState(0)
   const [pokemons, setPokemons] = useState([]);
@@ -41,10 +41,8 @@ function App() {
             </div>
           </li>
         ))}
-      </ol>
-
+      </ol>      
       {
-        // 10 + 20 <= 30
         (limit + offset < maxRecord) ? (
           <div className="pagination">
             <button
