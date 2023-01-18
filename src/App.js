@@ -23,43 +23,36 @@ function App() {
   
   return (
   <section className="content">
-      <nav className="navbar navbar-expand-lg bg-light">
-    <div className="container-fluid">
-      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <a className="navbar-brand" href="#">Home</a>
-      <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
-        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-          <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="#">Back</a>
-          </li>
-        </ul>
-        <form className="d-flex" role="search">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-          <button className="btn btn-outline-success" type="submit">Search</button>
-        </form>
+    <nav className="navbar bg-light">
+      <div className="container-fluid">
+        <a className="navbar-brand">
+          <h1>Pokedex</h1>
+        </a>
+      <form className="d-flex" role="search">
+        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button className="btn btn-outline-success" type="submit">Busca</button>
+      </form>
       </div>
-    </div>
-  </nav>
-      <h1>Pokedex</h1>
-      <ol id="pokemonList" className="pokemons">
-        {pokemons.map(pokemon => (
-          <li className={`pokemon ${pokemon.type}`} key={pokemon.number}>
-            <span className="number">#{pokemon.number}</span>
-            <span className="name">{pokemon.name}</span>
-            <div className="detail">
-              <ol className="types">
-                {pokemon.types.map(type => (
-                  <li className={`type ${type}`} key={type}>
-                    {type}
-                  </li>
-                ))}             
-              </ol>
-              <img src={pokemon.photo} alt={pokemon.name}/>
-            </div>
-          </li>
-        ))}
+    </nav>
+    <ol id="pokemonList" className="pokemons">
+    {pokemons.map(pokemon => (
+      <li className={`pokemon ${pokemon.type}`} key={pokemon.number}>
+        <span className="number">#{pokemon.number}</span>
+        <span className="name">{pokemon.name}</span>
+        <div className="detail">
+          <ol className="types">
+          {pokemon.types.map(type => (
+            <li 
+            className={`type ${type}`} 
+            key={type}>
+              {type}
+            </li>
+          ))}             
+          </ol>
+            <img src={pokemon.photo} alt={pokemon.name}/>
+        </div>
+      </li>
+    ))}
       </ol>      
       {
         (limit + offset < maxRecord) ? (
@@ -78,7 +71,7 @@ function App() {
           </div>
         ) : null
       }
-    </section>
+  </section>
   );
 }
 export default App;
