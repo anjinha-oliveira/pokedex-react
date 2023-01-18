@@ -22,6 +22,15 @@ body {
   }
 }
 
+.bg-light {
+  background-color: white;
+
+}
+
+.container-fluid {
+  background-color: white;
+}
+
 .pokemons {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -30,6 +39,7 @@ body {
   margin: 0;
   color: white;   
 }
+
 
 .normal { 
   background-color: #a6a877;
@@ -85,6 +95,7 @@ body {
 .fairy {
  background-color: #f9aec7; 
 }
+
 .pokemon {
   display: flex;
   flex-direction: column;
