@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 
 import './App.css';
 import pokeApi from './api'
+import PokeButton from './images/poke-bola-button.jpg'
 
 function App() {
   const limit = 10
@@ -31,7 +32,7 @@ function App() {
         <form className="d-flex" role="search">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
           <button type="button"> 
-          <img src="https://bit.ly/3BF9FD7" height ="90" width="auto" />
+          <img src={PokeButton} alt="bolaPokemon" height ="90" width="auto"/>
           </button>
         </form>
       </nav>

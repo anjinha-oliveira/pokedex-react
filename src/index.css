@@ -21,14 +21,17 @@ body {
       margin: 1rem auto;
   }
 }
-.h1 {
-
-}
 
 
 .bg-light {
   --bs-bg-opacity: 0;
 }
+
+.bolaPokemon {
+  border: none;
+  background-color: #6e5896;
+}
+
 .container-fluid {
   height: 70px;
   display: flex;
