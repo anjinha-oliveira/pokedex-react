@@ -23,17 +23,19 @@ function App() {
   
   return (
   <section className="content">
-    <nav className="navbar bg-light">
-      <div className="container-fluid">
-        <a className="navbar-brand">
-          <h1>Pokedex</h1>
-        </a>
-      <form className="d-flex" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-success" type="submit">Busca</button>
-      </form>
-      </div>
-    </nav>
+    <ol>
+      <nav id="barraNavegação" className="navbar bg-light m-auto">
+          <a className="navbar-brand">
+            <h1>Pokedex</h1>
+          </a>
+        <form className="d-flex" role="search">
+          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button type="button"> 
+          <img src="https://bit.ly/3BF9FD7" height ="90" width="auto" />
+          </button>
+        </form>
+      </nav>
+      </ol>
     <ol id="pokemonList" className="pokemons">
     {pokemons.map(pokemon => (
       <li className={`pokemon ${pokemon.type}`} key={pokemon.number}>
