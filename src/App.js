@@ -14,7 +14,7 @@ function App() {
   let pokemons = allPokemons.slice(0, offset)
   const [busca, setBusca] = useState('')
   pokemons = pokemons.filter((pokemon) => {
-    return pokemon.name.startsWith(busca)
+    return pokemon.name.toLocaleLowerCase().startsWith(busca.toLocaleLowerCase())
   })
 
   useEffect(() => {
