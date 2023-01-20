@@ -27,9 +27,24 @@ body {
   --bs-bg-opacity: 0;
 }
 
-.bolaPokemon {
-  border: none;
-  background-color: #6e5896;
+[type=button], [type=reset], [type=submit], button {
+  padding: none;
+  border-radius: 5rem;
+  border-style: unset;
+  border-color: rgb(225, 203, 227);
+}
+.image button {
+  padding: 25px 50px 75px;
+  border-radius: none;
+  background-image: repeating-linear-gradient('./images/poke-bola-button.jpg');
+
+}
+
+.form.d-flex{
+  border-radius: 1rem;
+  border-style: solid;
+
+
 }
 
 .container-fluid {
