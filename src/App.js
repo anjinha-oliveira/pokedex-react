@@ -9,13 +9,15 @@ function App() {
   const maxRecord = 151
 
   const [offset, setOffset] = useState(10)
+  const [busca, setBusca] = useState('')
+
   const [allPokemons, setPokemons] = useState([]);
   //const [pokemons, copyPokemons] = useState([])
-  let pokemons = allPokemons.slice(0, offset)
-  const [busca, setBusca] = useState('')
-  pokemons = pokemons.filter((pokemon) => {
+  let pokemons = allPokemons.filter((pokemon) => {
     return pokemon.name.toLocaleLowerCase().startsWith(busca.toLocaleLowerCase())
   })
+  pokemons = pokemons.slice(0, offset)
+  
 
   useEffect(() => {
     pokeApi.getPokemons(0, 151).then((pokemonsData = []) => {
