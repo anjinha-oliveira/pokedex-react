@@ -11,8 +11,11 @@ function App() {
   const [offset, setOffset] = useState(10)
   const [allPokemons, setPokemons] = useState([]);
   //const [pokemons, copyPokemons] = useState([])
-  const pokemons = allPokemons.slice(0, offset)
-  console.log(pokemons)
+  let pokemons = allPokemons.slice(0, offset)
+  const [busca, setBusca] = useState('')
+  pokemons = pokemons.filter((pokemon) => {
+    return pokemon.name.startsWith(busca)
+  })
 
   useEffect(() => {
     pokeApi.getPokemons(0, 151).then((pokemonsData = []) => {
@@ -20,6 +23,7 @@ function App() {
     })
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
 
   return (
   <section className="content">
@@ -29,7 +33,13 @@ function App() {
             <h1>Pokedex</h1>
           </a>
         <form className="d-flex" role="search">
-          <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <input 
+            className="form-control me-2" 
+            type="search" 
+            value={busca}
+            onChange={(ev => setBusca(ev.target.value))}
+            placeholder="Search" 
+            aria-label="Search"/>
           <button type="button"> 
           <img src={PokeButton} alt="bolaPokemon" height ="30" width="auto"/>
           </button>
@@ -59,7 +69,7 @@ function App() {
       {
         (offset + page < maxRecord) ? (
           <div className="pagination">
-            <button
+            <button 
               id="loadMoreButton" 
               type="button" 
               onClick={
