@@ -3,15 +3,17 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import './index.css';
 import Home from './pages/Home';
+import PokeTypes from './pages/PokeTypes';
 
 function App() {
+
+
   return (
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route exact path="/" element={<Home />} />
+      <Route exact path="/pokemon/:number/" element={<PokeTypes />} />
     </Routes>
-
-
   </BrowserRouter>   
 );
   }

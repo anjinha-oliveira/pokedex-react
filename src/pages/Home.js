@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 
 import pokeApi from '../api.js'
 
@@ -46,7 +47,7 @@ return (
       <li className={`pokemon ${pokemon.type}`} key={pokemon.number}>
         <span className="number">#{pokemon.number}</span>
         <span className="name" >
-          <a href={`/pokemon/${pokemon.number}/`}>{pokemon.name}</a>
+          <Link to={`/pokemon/${pokemon.number}/`}>{pokemon.name}</Link>
         </span>
         <div className="detail">
           <ol className="types">
