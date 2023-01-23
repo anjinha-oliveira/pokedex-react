@@ -41,11 +41,13 @@ return (
         </form>
       </nav>
     </ol>
-    <ol id="pokemonList" className="pokemons">
+    <ol id="pokemonList"  className="pokemons">
     {pokemons.map(pokemon => (
       <li className={`pokemon ${pokemon.type}`} key={pokemon.number}>
         <span className="number">#{pokemon.number}</span>
-        <span className="name">{pokemon.name}</span>
+        <span className="name" >
+          <a href={`/pokemon/${pokemon.number}/`}>{pokemon.name}</a>
+        </span>
         <div className="detail">
           <ol className="types">
           {pokemon.types.map(type => (
@@ -56,7 +58,7 @@ return (
             </li>
           ))}             
           </ol>
-            <img src={pokemon.photo} alt={pokemon.name}/>
+          <img src={pokemon.photo} alt={pokemon.name}/> 
         </div>
       </li>
     ))}

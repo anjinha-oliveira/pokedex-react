@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 import './index.css';
 import Home from './pages/Home';
@@ -7,7 +7,11 @@ import Home from './pages/Home';
 function App() {
   return (
   <BrowserRouter>
-    <Home/>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
+
+
   </BrowserRouter>   
 );
   }
