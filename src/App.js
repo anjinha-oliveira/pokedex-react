@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import {BrowserRouter} from 'react-router-dom'
 
 import './index.css';
 import pokeApi from './api'
+import Routes from './Routes'
+import Home from './pages/Home';
 
 function App() {
   const page = 10
@@ -25,64 +28,11 @@ function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-
   return (
-  <section className="content">
-    <ol>
-      <nav id="barraNavegação" className="navbar bg-light m-auto">
-          <a className="navbar-brand">
-            <h1>Pokedex</h1>
-          </a>
-        <form className="d-flex" role="search">
-          <input 
-            className="form-control me-2" 
-            type="search" 
-            value={busca}
-            onChange={(ev => setBusca(ev.target.value))}
-            placeholder="Search" 
-            aria-label="Search"/>
-        </form>
-      </nav>
-      </ol>
-    <ol id="pokemonList" className="pokemons">
-    {pokemons.map(pokemon => (
-      <li className={`pokemon ${pokemon.type}`} key={pokemon.number}>
-        <span className="number">#{pokemon.number}</span>
-        <span className="name">{pokemon.name}</span>
-        <div className="detail">
-          <ol className="types">
-          {pokemon.types.map(type => (
-            <li 
-            className={`type ${type}`} 
-            key={type}>
-              {type}
-            </li>
-          ))}             
-          </ol>
-            <img src={pokemon.photo} alt={pokemon.name}/>
-        </div>
-      </li>
-    ))}
-      </ol>      
-      {
-        (offset + page < maxRecord) ? (
-          <div className="pagination">
-            <button 
-              id="loadMoreButton" 
-              type="button" 
-              onClick={
-                (e) => {
-                  setOffset(page + offset)
-                }
-              }
-            >
-              load more
-            </button>
-          </div>
-        ) : null
-      }
-  </section>
-  );
-}
+  <BrowserRouter>
+    <Home/>
+  </BrowserRouter>   
+);
+  }
 export default App;
 
