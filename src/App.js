@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 import './index.css';
 import pokeApi from './api'
-import PokeButton from './images/poke-bola-button.jpg'
 
 function App() {
   const page = 10
@@ -12,7 +11,7 @@ function App() {
   const [busca, setBusca] = useState('')
 
   const [allPokemons, setPokemons] = useState([]);
-  //const [pokemons, copyPokemons] = useState([])
+  
   let pokemons = allPokemons.filter((pokemon) => {
     return pokemon.name.toLocaleLowerCase().startsWith(busca.toLocaleLowerCase())
   })
@@ -42,9 +41,6 @@ function App() {
             onChange={(ev => setBusca(ev.target.value))}
             placeholder="Search" 
             aria-label="Search"/>
-          <button type="button"> 
-          <img src={PokeButton} alt="bolaPokemon" height ="30" width="auto"/>
-          </button>
         </form>
       </nav>
       </ol>
