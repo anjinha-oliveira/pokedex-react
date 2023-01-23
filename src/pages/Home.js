@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from 'react';
-import { BrowserRouter } from "react-router-dom";
 
 import pokeApi from '../api.js'
 
