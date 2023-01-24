@@ -3,13 +3,16 @@ import { useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 
 function PokeTypes() {
-  let {number} = useParams()
+  let {number, name} = useParams()
   return (
     <section className="content">
-      <div>
-          <h1>Pokemon nº{number}</h1>
-        <div>
-          <div class="d-flex justify-content-end">
+      <ol>
+        <nav id="barraNavegação" className="navbar bg-light m-auto">
+          <a className="navbar-brand">
+           <h1>Pokemon nº{name}</h1>
+          </a>
+          <div className="d-flex justify-content-between">
+          <div className="">
             <Link to="/">
               <button 
                 type="button" 
@@ -17,9 +20,10 @@ function PokeTypes() {
                   Voltar
               </button>    
             </Link>
-            </div>    
-          </div>
-        </div>      
+          </div>    
+          </div>            
+        </nav>
+      </ol>
     </section>
   )
 }
