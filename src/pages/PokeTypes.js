@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Link  } from "react-router-dom";
 import pokeApi from "../api";
 
+
 function PokeTypes() {
   let { number } = useParams()
   const [pokemon, setPokemon] = useState([])
@@ -32,11 +33,20 @@ function PokeTypes() {
               </button>    
             </Link>
           </div>    
-          </div>            
+          </div>             
         </nav>
       </ol>
+      <ol>
+        <div className="container-img">
+          <div className="row">
+            <div>
+              <img src={pokemon.photo} className="rounded float-start" alt={pokemon.name}/>
+            </div>
+          </div>
+        </div>
+      </ol>
+      
     </section>
   )
 }
-
 export default PokeTypes;
