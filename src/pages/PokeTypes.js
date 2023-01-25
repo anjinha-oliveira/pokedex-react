@@ -39,13 +39,12 @@ function PokeTypes() {
       <ol>
         <div className="container-img">
           <div className="row">
-            <div>
+            <ol>
               <img src={pokemon.photo} className="rounded float-start" alt={pokemon.name}/>
-            </div>
+            </ol>
           </div>
         </div>
       </ol>
-      
     </section>
   )
 }
