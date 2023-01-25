@@ -1,15 +1,26 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { useParams } from 'react-router-dom';
-import { Link } from "react-router-dom";
+import { Link  } from "react-router-dom";
+import pokeApi from "../api";
 
 function PokeTypes() {
-  let {number, name} = useParams()
+  let { number } = useParams()
+  const [pokemon, setPokemon] = useState([])
+
+  useEffect(() => {
+    pokeApi.getPokemonsDetail({
+      'url': `https://pokeapi.co/api/v2/pokemon/${number}/`
+    }).then((pokemonData = {}) => {
+      setPokemon(pokemonData)
+    })
+  }, [])
+
   return (
     <section className="content">
       <ol>
         <nav id="barraNavegação" className="navbar bg-light m-auto">
           <a className="navbar-brand">
-           <h1>Pokemon nº{name}</h1>
+           <h1 className="text-capitalize">{pokemon.name}</h1>
           </a>
           <div className="d-flex justify-content-between">
           <div className="">

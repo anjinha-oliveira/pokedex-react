@@ -7,7 +7,6 @@ import PokeTypes from './pages/PokeTypes';
 
 function App() {
 
-
   return (
   <BrowserRouter>
     <Routes>
