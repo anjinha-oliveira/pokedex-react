@@ -29,7 +29,7 @@ function PokeTypes() {
             <Link to="/">
               <button 
                 type="button" 
-                className="btn btn-outline-info">
+                className="btn btn-outline-light border border-light">
                   Voltar
               </button>    
             </Link>
@@ -40,11 +40,11 @@ function PokeTypes() {
       <ol>
       <div className="row justify-content-center">
         <div className="col-4">
-          <div className="row-imag">
+          <div className="row">
             <img src={pokemon.photo} className="rounded float-start" alt={pokemon.name}/>
           </div>
         </div>
-        <div className="col-4">
+        <div className="col-4 border border-end-0">
           
           <h2 className="text-capitalize">Número: #{number}</h2>
           <h2 className="text-capitalize">Tipo:</h2>

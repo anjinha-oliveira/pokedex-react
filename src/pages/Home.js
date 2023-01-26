@@ -33,7 +33,7 @@ return (
         </a>
         <form className="d-flex" role="search">
           <input 
-            className="form-control me-2" 
+            className="form-control me-2 form-control border-success border border-secondary" 
             type="search" 
             value={busca}
             onChange={(ev => setBusca(ev.target.value))}
