@@ -38,21 +38,23 @@ function PokeTypes() {
         </nav>
       </ol>
       <ol>
-        <div className="container-img">
+      <div className="row justify-content-center">
+        <div className="col-4">
           <div className="row">
-            <div>
-              <img src={pokemon.photo} className="rounded float-start" alt={pokemon.name}/>
-            </div>
-            <ol className="abilities">
-            {pokemon.abilities?.map(ability => (
+            <img src={pokemon.photo} className="rounded float-start" alt={pokemon.name}/>
+          </div>
+        </div>
+        <div className="col-4">
+          <ol className="abilities">
+          {pokemon.abilities?.map(ability => (
             <li 
               key={ability.slot}>
                 {ability.ability.name}
             </li>
           ))} 
           </ol>    
-          </div>
         </div>
+      </div>
       </ol>
       
     </section>
