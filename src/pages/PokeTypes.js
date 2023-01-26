@@ -15,6 +15,7 @@ function PokeTypes() {
       setPokemon(pokemonData)
     })
   }, [])
+  
 
   return (
     <section className="content">
@@ -39,12 +40,21 @@ function PokeTypes() {
       <ol>
         <div className="container-img">
           <div className="row">
-            <ol>
+            <div>
               <img src={pokemon.photo} className="rounded float-start" alt={pokemon.name}/>
-            </ol>
+            </div>
+            <ol className="abilities">
+            {pokemon.abilities?.map(ability => (
+            <li 
+              key={ability.slot}>
+                {ability.ability.name}
+            </li>
+          ))} 
+          </ol>    
           </div>
         </div>
       </ol>
+      
     </section>
   )
 }

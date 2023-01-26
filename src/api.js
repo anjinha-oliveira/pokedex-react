@@ -4,6 +4,7 @@ class Pokemon {
     type;
     types = [];
     photo;
+    abilities = [];
 }
 
 const pokeApi = {}
@@ -14,6 +15,7 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     pokemon.name = pokeDetail.name
     const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)
     const [type] = types
+    pokemon.abilities = pokeDetail.abilities
 
     pokemon.types = types
     pokemon.type = type
@@ -25,6 +27,7 @@ pokeApi.getPokemonsDetail = (pokemon) => {
     return fetch(pokemon.url)
     .then((response) => response.json()) 
     .then(convertPokeApiDetailToPokemon) 
+
 }
 
 pokeApi.getPokemons = (offset = 0, limit = 5) => {
