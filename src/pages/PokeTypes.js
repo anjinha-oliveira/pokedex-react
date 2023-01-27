@@ -15,7 +15,6 @@ function PokeTypes() {
       setPokemon(pokemonData)
     })
   }, [])
-  
 
   return (
     <section className="content" >
@@ -44,8 +43,7 @@ function PokeTypes() {
             <img src={pokemon.photo} className="rounded float-start" alt={pokemon.name}/>
           </div>
         </div>
-        <div className="col-4 border border-end-0">
-          
+        <div className="col-4 border border-end-0">    
           <h2 className="text-capitalize">Número: #{number}</h2>
           <h2 className="text-capitalize">Tipo:</h2>
           <ol>

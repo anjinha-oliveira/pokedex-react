@@ -50,7 +50,6 @@ body {
   color: white;   
 }
 
-
 .normal { 
   background-color: #a6a877;
 }
@@ -120,7 +119,10 @@ body {
   text-align: right;
   font-size: .625rem;
 }
-
+a {
+  color: white;
+  text-decoration: none;
+}
 .pokemon .name{
   text-transform: capitalize;
   color: white;
