@@ -105,6 +105,7 @@ body {
  background-color: #f9aec7; 
 }
 
+
 .pokemon {
   display: flex;
   flex-direction: column;
@@ -123,6 +124,29 @@ a {
   color: white;
   text-decoration: none;
 }
+
+li {
+  list-style-type: none;
+}
+li .tiposPokemon {
+  font-style: normal;
+  color: white
+}
+
+li .habilidadesPokemon {
+  font-style: normal;
+  color: white
+}
+h2.text-capitalize.font-monospace{
+  color: aliceblue
+}
+
+.border-end-0 {
+  border-right: 0!important;
+  margin: auto;
+  padding: auto;
+}
+
 .pokemon .name{
   text-transform: capitalize;
   color: white;

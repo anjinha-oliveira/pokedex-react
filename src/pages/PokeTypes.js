@@ -45,17 +45,17 @@ function PokeTypes() {
           </div>
         </div>
         <div className="col-4 border border-end-0">
-          <h2 className="text-capitalize">Número: #{number}</h2>
-          <h2 className="text-capitalize">Tipo:</h2>
+          <h2 className="text-capitalize font-monospace">Número: #{number}</h2>
+          <h2 className="text-capitalize font-monospace">Tipo:</h2>
           <ol>
             {pokemon.types?.map(type => (
-              <li key={type}>{type}</li>
+              <li className="tiposPokemon" key={type}>{type}</li>
             ))}
-          </ol> 
-          <h2 className="text-capitalize">Habilidades:</h2>
+          </ol>
+          <h2 className="text-capitalize font-monospace">Habilidades:</h2>
           <ol className="row-type">
           {pokemon.abilities?.map(ability => (
-            <li className="text-capitalize"
+            <li className="habilidadesPokemon"
               key={ability.slot}>
                 {ability.ability.name}
             </li>
