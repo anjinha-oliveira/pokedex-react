@@ -17,7 +17,7 @@ function PokeTypes() {
   }, [])
 
   return (
-    <section className="content" >
+    <section className="contentPoketype" >
       <li className={`pokemon ${pokemon.type}`} key={pokemon.number}>    
       <ol>
         <nav id="barraNavegação" className="navbar bg-light m-auto">
