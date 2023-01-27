@@ -18,7 +18,7 @@ function PokeTypes() {
   
 
   return (
-    <section className="content">
+    <section className="content" >
       <ol>
         <nav id="barraNavegação" className="navbar bg-light m-auto">
           <a className="navbar-brand">
@@ -29,7 +29,7 @@ function PokeTypes() {
             <Link to="/">
               <button 
                 type="button" 
-                className="btn btn-outline-light border border-light">
+                className="btn btn-light border border-sucess">
                   Voltar
               </button>    
             </Link>
