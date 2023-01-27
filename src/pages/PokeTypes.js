@@ -18,6 +18,7 @@ function PokeTypes() {
 
   return (
     <section className="content" >
+      <li className={`pokemon ${pokemon.type}`} key={pokemon.number}>    
       <ol>
         <nav id="barraNavegação" className="navbar bg-light m-auto">
           <a className="navbar-brand">
@@ -43,7 +44,7 @@ function PokeTypes() {
             <img src={pokemon.photo} className="rounded float-start" alt={pokemon.name}/>
           </div>
         </div>
-        <div className="col-4 border border-end-0">    
+        <div className="col-4 border border-end-0">
           <h2 className="text-capitalize">Número: #{number}</h2>
           <h2 className="text-capitalize">Tipo:</h2>
           <ol>
@@ -63,7 +64,7 @@ function PokeTypes() {
         </div>
       </div>
       </ol>
-      
+    </li>
     </section>
   )
 }
