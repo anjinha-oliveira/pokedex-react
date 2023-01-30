@@ -4,12 +4,12 @@ Comecei fazendo esse [projeto usando o HTML, CSS E JavaScript](https://github.co
 
 # Página web 
 
-Nesse projeto eu fiz o consumo da Pokeapi, onde peguei nome, número(id) e detalhes de 150 pokemons
+Nesse projeto eu utilizei o Pokeapi, onde fiz o consumo de informações de 150 pokemons também adicionei o botão load more para carregar todos os 150 na página
 
 ![Pagina inicial](/src/images/pagina_inicial.png)
 
 
-Fiz a implementação do React nesse projeto ultilizando rotas para que assim que o usuário clickar no nome do pokemon, ele seja direcionado a uma outra página com informações sobre o pokemon
+Fiz a implementação do React nesse projeto utilizando rotas para que quando o usuário click no nome do pokemon, ele seja direcionado a uma outra página com informações sobre o pokemon. Nessa página também adicionei o botão voltar 
 
 ![Pagina detail](/src/images/pagina_detail.png)
 
