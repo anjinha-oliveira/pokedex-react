@@ -4,11 +4,14 @@ Comecei fazendo esse [projeto usando o HTML, CSS E JavaScript](https://github.co
 
 # Página web 
 
-![Pagina inicial Pokedex](images/pagina_inicial.png)
+Nesse projeto eu fiz o consumo da Pokeapi, onde peguei nome, número(id) e detalhes de 150 pokemons
 
-Fiz a implementação do React nesse projeto ultilizando rotas para que assim que o usuário click no nome do pokemon, ele seja direcionado a uma outra página com informações sobre o pokemon
+![Pagina inicial](/src/images/pagina_inicial.png)
 
-![Pagina detail Pokedex](images/pagina_detail.png)
+
+Fiz a implementação do React nesse projeto ultilizando rotas para que assim que o usuário clickar no nome do pokemon, ele seja direcionado a uma outra página com informações sobre o pokemon
+
+![Pagina detail](/src/images/pagina_detail.png)
 
 ## Como instalar
 
