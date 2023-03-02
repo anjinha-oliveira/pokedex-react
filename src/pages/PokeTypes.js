@@ -20,7 +20,7 @@ function PokeTypes() {
     <section className="contentPoketype" >
       <li className={`pokemon ${pokemon.type}`} key={pokemon.number}>    
       <ol>
-        <nav id="barraNavegação" className="navbar bg-light m-auto">
+        <nav id="barraNavegação" className="navbar bg-green m-auto">
           <a className="navbar-brand">
            <h1 className="text-capitalize">{pokemon.name}</h1>
           </a>

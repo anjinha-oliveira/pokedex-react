@@ -27,7 +27,7 @@ function Home() {
 return (
   <section className="content">
     <ol>
-      <nav id="barraNavegação" className="navbar bg-light m-auto">
+      <nav id="barraNavegação" className="navbar h1-nav bg-green m-auto">
         <a className="navbar-brand">
           <h1>Pokedex</h1>
         </a>
