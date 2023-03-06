@@ -41,9 +41,11 @@ function PokeTypes() {
       <div className="row justify-content-right">
         <div className="col-4">
             <img src={pokemon.photo} className="img-pokemon" alt={pokemon.name}/>
-            <h2 className="text-capitalize font-monospace">Número: #{number}</h2>
-            <h2 className="text-capitalize font-monospace">Tipo:</h2>
-            <ol>
+        </div>
+        <div className="col-8 text-center">
+          <h2 className="text-capitalize font-monospace">Número: #{number}</h2>
+          <h2 className="text-capitalize font-monospace">Tipo:</h2>
+          <ol>
               {pokemon.types?.map(type => (
                 <li className="tiposPokemon" key={type}>{type}</li>
               ))}
